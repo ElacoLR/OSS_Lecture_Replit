@@ -9,8 +9,3 @@ B	Emma
 A	Olivia
 D	Noah
 F	Ava
-A+      John
-B+      Plusman
-C+      Example
-D+      Test
-A0      week4Test
