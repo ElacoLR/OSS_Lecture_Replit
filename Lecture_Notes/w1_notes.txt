@@ -1,0 +1,124 @@
+shell | 쉘
+- 리눅스 커널과 사용자를 연결해주는 인터페이스
+- 사용자의 입력 읽고, 해석하고, 프로그램 실행함
+- "쉘 스크립트" : 일련의 명령행을 한 파일에 담아놓은
+- 리눅스 운영체제의 표준인 bash (bourne again shell)
+
+문법
+<프로그램명> <내용>
+echo : 셸 명령, 내장명령, 프로그램
+  - 화면에 출력하는 명령
+
+- 변수를 내용에 넣을 수 있다.
+  - 스페이스 주의할 것
+  - ""는 사용해도 되고 스페이스 없으면 없어도 됨
+  - 변수를 사용할 때에는 \$ 기호 사용한다
+  - 내장된 변수도 존재한다. 이것들은 대문자로 지정되어 있다.
+
+- 명령의 특징
+  - 한 프로그램이 한 가지 일만 한다.
+  - 명령의 조합을 잘 해야 한다.
+
+- 명령
+  - 프로그램 자체
+  - 단순명령(simple command) : 프로그램 + 내용
+  - 결합 명령(combined command) : 프로그램 + 옵션 + 내용
+    - 프로그램을 구체화하는 역할
+    - '-h'
+    "ls -l"
+
+  - ls : list
+  - change directory
+
+  - 파이프
+    - |
+    - 명령행 | 명령행
+    - less
+    - 이전 명령행의 출력값을 다음 명령행의 입력값으로 보내는 역할
+    'echo \$PATH | less'
+    - less 나오는 키 : q
+    - 파이프라인 : 파이프라인으로 연결한 명령행
+    
+  - wc, head, cut, grep, sort, uniq
+
+- 입력
+  - stdin : standard input/in, 표준 입력
+  - 프롬프트를 통해서 입력되는 입력스트림
+
+- 출력
+  - stdout : standard output/out, 표준 출력
+  - 출력 스트림
+
+Q. /bin 내용을 라인별로 출력하라.
+A. ls -l /bin
+
+1. wc
+- 파일 내용의 줄(line) 수, 단어(word) 수, 문자(character) 수 출력하는 명령
+
+- wc로 이 파일의 내용 출력하기
+- 지금 디렉터리의 하위 디렉터리 내용의 줄 수, 단어 수, 문자 수 출력하라.
+  - 1. 하위 디렉터리 조회 : ls
+  - 2. 파이프라인 연결 : ls | wc
+
+- 명령인자
+  -w
+  -l
+  -c
+
+wc1. txt 단어 몇 글자인지 세어보자.
+- wc -w w1_notes.txt
+wc2. /bin 파일+디렉터리 개수 몇 개인지
+- ls /bin | wc -l
+
+2. head
+- 파일의 1째 줄 부터 n째 줄 내용까지 화면에 출력하는 명령
+-n : 
+  head -n 3
+  (default : 10)
+
+ex1. 이 파일의 1번째 줄 단어 수, 글자 수 세기
+- head -n 1 w1_notes.txt | wc -w -c
+ex2. /bin 파일 중에서 앞의 5개만 출력하기
+- ls /bin | head -n 5
+
+3. cut
+- 파일의 내용 중에서 특정 열만 출력하는 명
+- 범위 지정 방법 : (탭)
+  - \t : -f
+  James \t 34
+  f1       f2
+
+  cut -f 1 name.txt
+
+- 3, 5, 6
+  cut -f3,5,6
+- 4-5
+  cut -f4-5
+
+ex1. 3번째 필드 조회하기
+ex2. 1번째 필드 첫 번째 줄 조회하기
+
+-c : character
+-c5
+-c-5
+-c1,5,6
+
+ex3. animals.txt 1 필드의 1번째 단어의 마지막 글자 출력하기
+=> 마지막 가져오기는 음수 인덱스로 접근하지 않는다.
+  - rev 명령어 사용
+
+  - cut -f 1 animals.txt | rev | cut -c 1
+
+-d <구분자>
+  -d ,
+
+ex4. animals.txt 4번째 필드 : Lutz, Mark에서 Lutz만 출력하기
+ex5. animals.txt 4번째 필드에서 모든 last name 출력하기
+
+A4. cut -f 4 animals.txt | head -n 1 | cut -d, -f 1
+A5. cut -f 4 animals.txt | cut -d, -f 1
+
+시험 내용
+shell, 파이프가 뭔지, 표준 입출력이 뭔지 물어보는 개념 내용
+less 빠져나오기 : q
+명령어 응용
