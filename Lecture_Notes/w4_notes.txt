@@ -44,3 +44,14 @@
       예: 존재하는 파일과 존재하지 않는 파일 모두 읽어서 새로운 파일 만들자.
           line1.txt non.txt -> line2.txt
           - 모두 리다이렉션하라.
+
+          cat line1.txt non.txt 2>> line2.txt # 이어쓰기
+          cat line1.txt non.txt &> line2.txt
+          
+  4) 입출력 모두 다 같이
+    - 명령 < 입력파일 > 출력파일
+
+    Q. animals.txt 에서 Perl 라인의 글자(character) 수 세고 결과를 파일로 (result). 입력도 리다이렉션 (한번에)
+    A. grep Perl < animals.txt | wc -c > result.txt
+
+#2. Escape Letters
