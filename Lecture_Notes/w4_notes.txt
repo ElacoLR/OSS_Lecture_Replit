@@ -179,4 +179,10 @@
 - 요약
   - 명령행 편집 효율적으로 잘하자.
 
-    
+    # 1. 캐럿을 이용한 히스토리 확장
+    md5sum *.jp | ... | ...
+
+    ^jp^jpg
+    <패턴>:s/from_cmd/to_cmd
+    !!:s/jp/jpg
+    !md5sum/jp/jpg
