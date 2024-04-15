@@ -83,6 +83,8 @@
 4. .
 5. ^#
 6. \\$
+7. ^[^A-Z]
+8. 
 
 
 #2. 확장
@@ -195,7 +197,15 @@ sed 를 이용해서
 
 image1.jpg, image2.jpg, image3.jpg 로 바꿔보기
 
-A. sed s/\(\)//g 이용할 것
+A.
+```sh
+
+for file in image.jpg.*; do
+  new_name=$(echo "$file" | sed 's/image\.jpg\.//')
+  mv $file "image$new_name.jpg"
+done
+
+```
 
 ### address
 - 범위 지정

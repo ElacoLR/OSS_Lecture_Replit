@@ -1,0 +1,12 @@
+This is a sample line \
+This is a sample2 line
+#This is a sample3 line
+
+This sentence include only b.
+This sentence include ab.
+This sentence include aaaaaaaaaaab.
+
+\ This sentence start with backslash
+This sentence end with backslash \
+
+this sentence start with small letters.
