@@ -57,7 +57,9 @@
 
   ##9. \(regex\)
   - back referencing이 가능하다.
-  - '^\(.\)\1' # 동일한 알파벳 2개로 시작하는 라인 *aaa.. ll...
+  - '^\(.\)\2\1' # 동일한 알파벳 2개로 시작하는 라인 *aaa.. ll...
+  - abba
+  - '\(a\)\(b\)\2\1'
 
   ##10. regex1 \| regex2
   - regex1 or regex2
@@ -73,3 +75,149 @@
 8) 빈줄이 아닌 모든 줄 매칭
 9) cookie나 cake이 포함된 줄 매칭
 10) w. 매칭
+
+
+1. [a-f]
+2. a?b
+3. a*b
+4. .
+5. ^#
+6. \\$
+
+
+#2. 확장
+[a-zA-Z0-9] \w
+\W (not)
+\b : word boundary (앞뒤) h, o
+\b<regex>\b
+  \< 앞 \> 뒤
+\B ell
+\s whitespace (space, tab)
+\S
+
+#3. ed
+- 텍스트 에디터
+- line-oriented text editor
+- 인터렉티브형
+- format : ed file
+
+- 치환 (a -> b) 하라
+  [address][명령][정규식][flags]
+  1,$s/a/b
+  p
+
+  1,$s/[a-z]//g # global (flag) g를 붙이면 전체, 안 붙이면 라인별
+
+  Q. 모음 지우기
+  => 정규표현식 연습가능함
+  A. 1,$s/[AEIOUaeiou]//g
+
+  - ctrl+d
+
+#4. sed
+##1) intro
+  - stream editor
+  - 표준 입출력 사용 가능, 파이프라인 사용 가능
+  - 인터렉티브 하지 않음
+  - 단위 : 라인
+  
+  Q. animals.txt 에서 python 을 PYTHON 으로 바꾸고 동일한 파일명으로 저장하기
+    - sed 말고 아는 프로그램으로
+  
+  A. tr 'python' 'PYTHON' > animals.txt
+  
+  A. sed -i 's/python/PYTHON/g' animals.txt
+
+##2) sed 실행하기
+  - format : sed <script> <input_file> > <output_file>
+
+  - hello world 에서 hello 를 world 로 바꾸기
+  - sed 's/hello/world/g' file
+  - sed 's/hello/world/g' < file
+  - cat file | sed 's/hello/world/g' # 파이프라인으로 받을 수도 있다.(딱히 추천하지 않음)
+
+### -i option
+  - 동일한 파일에 저장한다. (in-place)
+  - 임시파일을 따로 저장하고 싶을 때 -iE #fileE
+
+### -n option
+  - p와 같이 사용하여 출력 범위를 지정한다.
+    sed -n '2p' file
+  - 5~10줄 출력하기
+    sed -n '5,10p' file # ,가 range
+
+  - python이 있는 라인만 출력하기
+    sed -n '/python/p' file
+
+  - ; 으로 여러 정규식 연결 가능
+    sed -n '1p ; $p' fileA fileB fileC
+    cat fileA fileB fileC | sed -n '1p ; $p'
+
+### -e, -f option
+  - -e : expression
+  - -f : file
+  sed -e '1p ; $p' -f file
+  - 옵션이 없으면 1번째가 정규표현식, 2번째가 입력파일
+
+  format : sed <option> <script> <input_file> # full format
+
+##3) script
+- format : <address><cmd><options>
+  '2p'
+  - address(범위) : 2
+  - cmd : p
+  - 5,10p
+  - '3d' 3번째 라인을 지워라
+
+  Q. input_file 에서 python으로 시작하는 라인 삭제하고, hello -> world 로 변경한 뒤 out_file에 저장하라.
+  A. sed '/^python/d ; s/hello/world/g' input_file > out_file
+  A. sed -e '/^python/d' -e 's/hello/world/g' input_file > out_file
+
+  Q.
+  1) 5번째 줄 삭제
+  2) python, Python 포함 줄 삭제
+  3) 처음 10개 줄 중 2번 실행
+  4) 각 줄에 첫 3글자 삭제
+
+  's/python//g' : python 삭제
+
+  - p, d, s, q (quit)
+
+### cmd 's'
+- format : s/regex/from_char/to_char/flag
+- flag 에서 가장 많이 쓰이는 g (global)
+- p : 해당 부분 프린트
+- i : 대소문자 구분 없음
+
+Q. image.jpg.1, image.jpg.2, image.jpg.3
+
+sed 를 이용해서
+
+image1.jpg, image2.jpg, image3.jpg 로 바꿔보기
+
+A. sed s/\(\)//g 이용할 것
+
+### address
+- 범위 지정
+  '2p'
+  sed '160s/a/b/'
+  sed '/apple/s///' # apple 이 있는 부분에서 뭔가를 하는
+  sed '/apple/!s///' # apple 이 없는 부분에서 뭔가를 하는
+  
+  sed '160,200s/a/b' # 160 줄 부터 200줄 까지
+  sed '160,2s/a/b' # 160 줄 only
+  $
+  1,$~2 # 2스텝
+
+  sed 시험 매우 중요!!!
+
+# 스크립트 작성
+- 파일에 커맨드라인 입력
+- 모드 변경한다.
+  chmod +x file
+- 실행
+  name
+  ./name (name 안되면)
+
+- 주석 # 으로 단다.
+  - 라인 단위.
