@@ -1,5 +1,6 @@
 { pkgs }: {
   deps = [
+    pkgs.dos2unix
     pkgs.ed
     pkgs.vim
     pkgs.bashInteractive
