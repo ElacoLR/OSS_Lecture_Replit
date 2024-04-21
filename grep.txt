@@ -1,0 +1,48 @@
+hello
+world
+
+blank line test
+5thline
+yes
+no
+
+this have python
+this doesn't have
+this have Python
+
+python start hello world
+
+hello world
+
+cookie is here
+bake is not here
+cake is here
+no way
+
+w. is here
+w is here
+word boundary . dot is here
+
+# this start with sharp
+
+this ends with \
+
+This start with upper case
+This too
+
+python change this to upper case
+
+this include apple
+this also include apple
+this not include
+
+this have more than 10 x xxxxxxxxxxxxx
+
+this have 9 xxxxxxxxx
+
+this have cbbc
+
+this is ab
+this is a
+this is b
+this is aaaaaab
