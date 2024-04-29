@@ -1,0 +1,9 @@
+#!/bin/bash
+
+dir="$1"
+
+files=$( ls -l $dir | cut -c 1 | grep -v "d" | wc -l )
+directs=$( ls -l $dir | cut -c 1 | grep "d" | wc -l )
+
+echo "현재 위치: $dir"
+echo "파일 $files개, 폴더 $directs개입니다."

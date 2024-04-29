@@ -85,7 +85,7 @@
 6. \\$
 7. ^[^A-Z]
 8. [^/^$/]
-9. \bcookie\b\|\bcake\b
+9. cookie\|cake
 10. w\.
 
 
