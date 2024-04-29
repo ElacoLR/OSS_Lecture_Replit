@@ -1,7 +1,7 @@
 #!/bin/bash
 
 ls="ls *"
-pwd="pwd"
+pwd=$( pwd )
 
 directs=$( ls -l | grep ^d | wc -l)
 files=$( ls -l | cut -c 1 | grep -v "d" | wc -l )

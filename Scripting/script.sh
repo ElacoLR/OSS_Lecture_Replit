@@ -7,3 +7,5 @@ echo '$#' # X
 
 name="$1"
 echo $name
+
+echo $*
