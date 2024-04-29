@@ -1,10 +1,14 @@
 #!/bin/bash
 
-ls="ls *"
-pwd="pwd"
+inp=$1
+
+ls="ls $inp"
+pwd=$( pwd )
 
 directs=$( ls -l | grep ^d | wc -l)
 files=$( ls -l | cut -c 1 | grep -v "d" | wc -l )
+
+files=$(( $files - 1 ))
 
 echo "현재 위치: $pwd"
 echo "파일: $files개, 폴더: $directs개입니다."

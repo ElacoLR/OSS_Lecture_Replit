@@ -91,5 +91,34 @@ Q. 디렉토리를 인수로 받아서, 파일과 디렉토리 개수를 세는 
 파일 ...개, 폴더 ....개입니다.
 ```
 
+<ls . vs ls *>
 test case 1: .
 test case 2: *
+
+```sh
+#!/bin/bash
+
+ls="ls ."
+pwd=$( pwd )
+
+directs=$( ls -l | grep ^d | wc -l)
+files=$( ls -l | cut -c 1 | grep -v "d" | wc -l )
+
+files=$(( $files - 1 ))
+
+echo "현재 위치: $pwd"
+echo "파일: $files개, 폴더: $directs개입니다."
+```
+
+## $*
+- 모든 인수를 출력해주는 변수
+
+# 전화번호부 관리 스크립트 만들기
+1) 검색
+   ./book.sh 이름
+   
+2) 추가
+   이름, 번호를 인수로 넣어 추가하기
+
+3) 삭제
+   이름으로 검색해서 이름, 번호를 삭제하기
