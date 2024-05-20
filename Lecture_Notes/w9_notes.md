@@ -189,4 +189,7 @@ git log --pretty=format:"%h - %s" --since="2008-10-01" --until="2008-11-01" -- t
      - 수정 > 커밋 > pull > push (항상 pull 먼저 체크하기)
 
     4) 클린
-       
+
+    5) 과제
+       - README.md
+         - 레포에 대한 소개, 설치 방법, 협업 방식 알려주는 파일
