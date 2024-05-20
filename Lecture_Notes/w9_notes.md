@@ -160,3 +160,33 @@ git log --pretty=format:"%h - %s" --since="2008-10-01" --until="2008-11-01" -- t
   - 사용하는 목적 : 협업
   - 여러 개 등록 가능함
   - 깃허브
+
+  1. 내 로컬에 원격 저장소 확인하기
+     git remote
+     git remote -v (더 자세한 정보)
+
+     - 현재 프로젝트에 등록한 원격 저장소 정보 확인하기
+     - 원하는 디렉토리에 가서 실행해야 한다.
+  2. 원격 저장소 만들기 (깃허브에서)
+     - 깃허브에서 레포 파기
+     - public으로 해야 replit과 연결됨
+     - 연결 url : github.com/내아이디/레포이름.git
+  
+  3. 원격 저장소 추가하기
+     1)
+     git remote add <name> <url>
+     - name : origin (주로), 내가 원하는 별명으로
+
+     2) 저장소의 정보 가져오기
+     git fetch origin
+     git pull origin main
+     git pull <remote_name> <branch_name>
+
+     3) 원격 저장소와 로컬 저장소 합쳐서 모두 원격으로 올리기
+     git push -u origin main
+
+     - pull & push가 루틴임
+     - 수정 > 커밋 > pull > push (항상 pull 먼저 체크하기)
+
+    4) 클린
+       
