@@ -138,4 +138,11 @@ git log --pretty=format:"%h - %s" --since="2008-10-01" --until="2008-11-01" -- t
   1) 추가 커밋
   git commit --amend
   - 이전 커밋을 수정하는 역할
-  - f
+    1. 커밋 -> 파일 새로 만들 때
+    git commit
+    git add
+    git commit --amend
+    2. 커밋 -> 수정 -> git commit -a --amend
+
+  2) 이전 상태로 되돌리기
+     git reset HEAD file_name
