@@ -38,8 +38,10 @@
 
 ## 그외 원하는 내용
 - .NET Framework 설치하기 : [.NET Framework]
+- Dillinger 마크다운 파일 보기 : [Dillinger Markdown]
 
 [.NET Framework]: <https://dotnet.microsoft.com/ko-kr/download/dotnet-framework>
+[Dillinger Markdown]: <https://github.com/ElacoLR/OSS_Lecture_Replit/blob/main/OSS.md>
 [제 2주]: <https://github.com/ElacoLR/OSS_Lecture_Replit/blob/main/Lecture_Notes/w1_notes.txt>
 [제 3주]: <https://github.com/ElacoLR/OSS_Lecture_Replit/blob/main/Lecture_Notes/w2_notes.txt>
 [제 4주]: <https://github.com/ElacoLR/OSS_Lecture_Replit/blob/main/Lecture_Notes/w3_notes.txt>

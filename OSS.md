@@ -105,6 +105,61 @@ gulp watch
 karma test
 ```
 
+#### Building for source
+
+For production release:
+
+```sh
+gulp build --prod
+```
+
+Generating pre-built zip archives for distribution:
+
+```sh
+gulp build dist --prod
+```
+
+## Docker
+
+Dillinger is very easy to install and deploy in a Docker container.<br>
+<br>
+
+By default, the Docker will expose port 8080, so change this within the<br>
+Dockerfile if necessary. When ready, simple use the Dockerfile to<br>
+build the image.
+
+```sh
+cd dillinger
+docker build -t <youruser>/dillinger:${package.json.version} .
+```
+
+This will create the dillinger image and pull in the necessary dependencies.<br>
+Be sure to swap out ${package.json.version} with the actual<br>
+version of Dillinger.<br><br>
+
+Once done, run the Docker image and map the port to whatever you wish on<br>
+your host. In this example, we simply map port 8000 of the host to<br>
+port 8080 of the Docker (or whatever port was exposed in the Dockerfile):<br>
+
+```sh
+docker run -d -p 8000:8080 --restart=always --cap-add=SYS_ADMIN --name=dillinger <youruser>/dillinger:${package:json:version}
+```
+
+> Note: `--capt-add=SYS-ADMIN` is required for PDF rendering.
+
+Verify the deployment by navigating to your server address in<br>
+your preferred browser.
+
+```
+127.0.0.1:8000
+```
+
+## License
+
+MIT<br><br>
+
+**Free Software, Hell Yeah!**
+
 [AngularJS]: <https://en.wikipedia.org/wiki/AngularJS>
 [Ace Editor]: <https://en.wikipedia.org/wiki/Ace_(editor)>
 [markdown-it]: <https://en.wikipedia.org/wiki/Markdown>
