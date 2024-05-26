@@ -171,6 +171,7 @@ git log --pretty=format:"%h - %s" --since="2008-10-01" --until="2008-11-01" -- t
      - 깃허브에서 레포 파기
      - public으로 해야 replit과 연결됨
      - 연결 url : github.com/내아이디/레포이름.git
+     - 
   
   3. 원격 저장소 추가하기
      1)
