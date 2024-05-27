@@ -184,7 +184,24 @@ fi
   - 조건1이 False면 조건2까지 가지 않는다.
 
 ## Q1. 0 < x < 10
+```sh
+x=5
+
+if [ $x -gt 0 -a $x -lt 10 ]
+then
+  echo yes
+fi
+```
 ## Q2. $name이 널값이 아니거나 $file이 읽기가능할 경우
+```sh
+name=""
+file="script.sh"
+
+if [ -z $name -o -r $file ]
+then
+  echo yes
+fi
+```
 
 - 괄호는 이스케이프가 필요함
 - 띄어쓰기 주의할 것
@@ -223,7 +240,14 @@ esac # case
 - 인수가 2개 이상이면 오류로 종료
 - 예: 파일명 month
 
+[정답 스크립트]
+
+## Q. 숫자, 대문자, 소문자, 특수문자 판별하는 스크립트 만들기
+
+
 [스크립트]: <https://github.com/ElacoLR/OSS_Lecture_Replit/blob/main/Scripting/count.sh>
 
 [정답]:
 <https://github.com/ElacoLR/OSS_Lecture_Replit/blob/main/Scripting/Announce.sh>
+
+[정답 스크립트]: <https://github.com/ElacoLR/OSS_Lecture_Replit/blob/main/Scripting/month.sh>
