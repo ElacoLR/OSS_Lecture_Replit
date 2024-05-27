@@ -161,5 +161,69 @@ fi
     ```
     [ -d tmp/ ]
     ```
+  -f : 파일
+  -s : 파일이 비어있지 않은지
+  -x : executable
+  -w : writable
+  -r : readable
+  -e : exists
+
+## 논리 부정 연산자
+```sh
+[ ! -x file ]
+```
+
+##
+(조건1) and/or (조건2)
+-a
+-o
+```sh
+[ -r file -a 3 -eq 4 ]
+```
+- and에서 주의할 것!
+  - 조건1이 False면 조건2까지 가지 않는다.
+
+## Q1. 0 < x < 10
+## Q2. $name이 널값이 아니거나 $file이 읽기가능할 경우
+
+- 괄호는 이스케이프가 필요함
+- 띄어쓰기 주의할 것
+- A or (B and C) (and가 우선한다)
+
+# case 표현식
+- 여러 조건을 비교할 경우 사용한다.
+
+1) jan
+2) feb
+3) ...
+12) dec
+
+dog) 개
+cat) 고양이
+
+```sh
+case 값
+in
+  패턴 1) cmd
+         cmd ;; # 패턴 1일 경우에 세미콜론 전 까지 명령 수행한다.
+  패턴 2) ...
+  * ) 그 외의 값
+esac # case
+```
+
+- 매칭되는 패턴 없으면 아무것도 실행하지 않는다.
+
+## Q. count 확장하기
+- 인수가 없으면 오류로 종료
+- 인수가 1개면 실행
+  - 숫자를 달로 환산하기
+    1 -> Jan
+    2 -> Feb
+    12 -> Dec
+- 인수가 2개 이상이면 오류로 종료
+- 예: 파일명 month
 
 [스크립트]: <https://github.com/ElacoLR/OSS_Lecture_Replit/blob/main/Scripting/count.sh>
+
+[정답]:
+<https://github.com/ElacoLR/OSS_Lecture_Replit/blob/main/Scripting/Announce.sh>
