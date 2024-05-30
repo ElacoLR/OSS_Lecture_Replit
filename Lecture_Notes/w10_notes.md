@@ -244,6 +244,34 @@ esac # case
 
 ## Q. 숫자, 대문자, 소문자, 특수문자 판별하는 스크립트 만들기
 
+[정답 스크립트2]
+
+### 패턴이 여러 개일 경우
+패턴1 | 패턴2 ) 명령문 ;;
+
+## 시간으로 인사하기 => case로 바꿔보기
+
+```sh
+if []
+then
+  : # 아무것도 하지 않기
+else
+fi
+```
+
+## &&, ||
+- 프로그램 && 프로그램 : 1이 성공하면 2를 실행하라.
+- || : 1이 실패하면 2를 수행하라.
+
+file을 정렬하고 file에 저장하라.
+echo hello && mv file1 file2
+
+```sh
+if [ 판별1 && 판별2 ] # 1 and 2
+&&
+```
+
+### Q. $file이 존재하지 않으면 /etc/passwd를 변수 $file에 할당하라.
 
 [스크립트]: <https://github.com/ElacoLR/OSS_Lecture_Replit/blob/main/Scripting/count.sh>
 
@@ -251,3 +279,5 @@ esac # case
 <https://github.com/ElacoLR/OSS_Lecture_Replit/blob/main/Scripting/Announce.sh>
 
 [정답 스크립트]: <https://github.com/ElacoLR/OSS_Lecture_Replit/blob/main/Scripting/month.sh>
+
+[정답 스크립트2]: <https://github.com/ElacoLR/OSS_Lecture_Replit/blob/main/Scripting/character.sh>
