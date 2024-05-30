@@ -51,6 +51,8 @@ if [ $isLeap = false ] && [ $month = "Feb" ] && [ $day -gt 28 ]; then
   reason="이유 : 윤년이 아닌데 2월 29일 입력되었음"
 fi
 
+# 달 30일, 31일 결정하기
+
 if [ $valid = true ]; then
   echo $month $day $year
 else
