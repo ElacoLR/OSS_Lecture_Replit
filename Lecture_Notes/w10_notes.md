@@ -77,13 +77,13 @@ fi;echo $?
 ```
 
 ## 수치비교
-num1, num2
--eq : equal
--gt : greater than
--lt : less than
--ge : greater or equal
--le : less or equal
--ne : not equal
+num1, num2 <br>
+-eq : equal <br>
+-gt : greater than <br>
+-lt : less than <br>
+-ge : greater or equal <br>
+-le : less or equal <br>
+-ne : not equal <br>
 
 ```sh
 [ num1 -eq num2 ]
@@ -161,12 +161,12 @@ fi
     ```
     [ -d tmp/ ]
     ```
-  -f : 파일
-  -s : 파일이 비어있지 않은지
-  -x : executable
-  -w : writable
-  -r : readable
-  -e : exists
+  -f : 파일 <br>
+  -s : 파일이 비어있지 않은지 <br>
+  -x : executable <br>
+  -w : writable <br>
+  -r : readable <br>
+  -e : exists <br>
 
 ## 논리 부정 연산자
 ```sh
