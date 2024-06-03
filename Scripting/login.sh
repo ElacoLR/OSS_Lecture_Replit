@@ -5,10 +5,13 @@ if [ $# -ne 1 ]; then
   exit 2
 fi
 
-while true
+logged=false
+
+while [ $logged = false ]
 do
   if [ "$( who )" = "$user" ]; then
     echo "$user 로그인함!"
+    logged=true
   fi
   sleep 60
 done
