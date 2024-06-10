@@ -67,3 +67,27 @@ git branch -d "name"
 - 해결 방법
   1. 수동으로 고친다.
   2. git mergetool
+     <br>opendiff : 두 브랜치가 충돌된 지점이 하이라이트되고, 직접 vi를 이용해서 수정할 수 있다.
+     - 스테이징 까지는 자동으로 해준다.
+  4. 상태 체크, 커밋
+  5. 병합
+     <br>"Already up to date."
+
+## 병합된 브랜치 확인하기
+git branch --merged<br>
+git branch --no-merged
+
+- 병합되지 않은 브랜치는 -d로 삭제할 수 없다.
+  - -D 로 강제 삭제할 수 있다.
+
+# 리모트 브랜치
+- remote tracking branch 라는 원격 저장소의 커밋 지점을 관리하는 포인터가 존재한다.
+- 로컬에 존재하지만 임의로 움직이지는 않는다.
+- 이름: remote/branch<br>
+  main develop
+  origin/main origin/develop (원격저장소 브랜치명)
+
+## 프로세스
+- 로컬에서 브랜치를 만들더라도 원격에 브랜치가 생성되지 않는다.
+  1. 브랜치 생성하기
+  2. 원격에 그 브랜치 push하기
