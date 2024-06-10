@@ -42,3 +42,8 @@ git checkout "name"
   git checkout -b "name"
 
   - 브랜치 생성 + 이동
+
+- 메인 브랜치로 이동해야 한다.
+- git merge "name"
+
+## Q. 브랜치 생성 -> 이동 -> 파일 만들고 작업한다. -> 커밋 -> 병합
