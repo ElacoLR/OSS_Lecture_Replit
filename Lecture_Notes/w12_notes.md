@@ -61,3 +61,9 @@ git branch -d "name"
 
 # 브랜치 충돌 가정하기
 - 같은 파일을 두 브랜치에서 다르게 수정하기 -> 머지
+  <br>CONFLICT (content): Merge conflict in test
+
+- 상태 확인 먼저하기, 어떤 지점에서 실패가 일어났는지 파악하기
+- 해결 방법
+  1. 수동으로 고친다.
+  2. git mergetool
