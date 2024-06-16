@@ -8,7 +8,7 @@ validint()
         echo "You didn't enter anything. Please enter a number." >&2 ; return 1
     fi
 
-    if [ "${number%${number#?}}" = "/" ] ; then
+    if [ "${number%${number#?}}" = "-" ] ; then
         testvalue="${number#?}"
     else
         testvalue="$number"
